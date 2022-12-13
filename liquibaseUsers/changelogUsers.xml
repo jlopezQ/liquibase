@@ -1,0 +1,271 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="Jlopez (generated)" id="1670440043294-1">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="actor_actor_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-2">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="address_address_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-3">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="category_category_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-4">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="city_city_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-5">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="country_country_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-6">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="customer_customer_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-7">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="film_film_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-8">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="inventory_inventory_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-9">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="language_language_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-10">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="payment_payment_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-11">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="rental_rental_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-12">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="staff_staff_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-13">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="store_store_id_seq" startValue="1" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-14">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="address_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="address_pkey" />
+            </column>
+            <column name="address" type="VARCHAR(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="address2" type="VARCHAR(50)" />
+            <column name="district" type="VARCHAR(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="city_id" type="SMALLINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="postal_code" type="VARCHAR(10)" />
+            <column name="phone" type="VARCHAR(20)">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueComputed="now()" name="last_update" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-15">
+        <createTable tableName="city">
+            <column autoIncrement="true" name="city_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="city_pkey" />
+            </column>
+            <column name="city" type="VARCHAR(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="country_id" type="SMALLINT">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueComputed="now()" name="last_update" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-16">
+        <createTable tableName="country">
+            <column autoIncrement="true" name="country_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="country_pkey" />
+            </column>
+            <column name="country" type="VARCHAR(50)">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueComputed="now()" name="last_update" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-17">
+        <createTable tableName="customer">
+            <column autoIncrement="true" name="customer_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="customer_pkey" />
+            </column>
+            <column name="store_id" type="SMALLINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="first_name" type="VARCHAR(45)">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_name" type="VARCHAR(45)">
+                <constraints nullable="false" />
+            </column>
+            <column name="email" type="VARCHAR(50)" />
+            <column name="address_id" type="SMALLINT">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueBoolean="true" name="activebool" type="BOOLEAN">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueComputed="('now'::text)::date" name="create_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueComputed="now()" name="last_update" type="TIMESTAMP WITHOUT TIME ZONE" />
+            <column name="active" type="INTEGER" />
+        </createTable>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-18">
+        <createIndex indexName="idx_fk_address_id" tableName="customer">
+            <column name="address_id" />
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-19">
+        <createIndex indexName="idx_fk_city_id" tableName="address">
+            <column name="city_id" />
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-20">
+        <createIndex indexName="idx_fk_country_id" tableName="city">
+            <column name="country_id" />
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-21">
+        <createIndex indexName="idx_fk_store_id" tableName="customer">
+            <column name="store_id" />
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-22">
+        <createIndex indexName="idx_last_name" tableName="customer">
+            <column name="last_name" />
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-23">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="customer" constraintName="customer_address_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="CASCADE" referencedColumnNames="address_id" referencedTableName="address" validate="true" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-24">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="address" constraintName="fk_address_city" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="city_id" referencedTableName="city" validate="true" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-25">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="city" constraintName="fk_city" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="country_id" referencedTableName="country" validate="true" />
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-26">
+        <createView fullDefinition="false" viewName="actor_info">SELECT a.actor_id,
+    a.first_name,
+    a.last_name,
+    group_concat(DISTINCT (((c.name)::text || ': '::text) || ( SELECT group_concat((f.title)::text) AS group_concat
+           FROM ((film f
+             JOIN film_category fc_1 ON ((f.film_id = fc_1.film_id)))
+             JOIN film_actor fa_1 ON ((f.film_id = fa_1.film_id)))
+          WHERE ((fc_1.category_id = c.category_id) AND (fa_1.actor_id = a.actor_id))
+          GROUP BY fa_1.actor_id))) AS film_info
+   FROM (((actor a
+     LEFT JOIN film_actor fa ON ((a.actor_id = fa.actor_id)))
+     LEFT JOIN film_category fc ON ((fa.film_id = fc.film_id)))
+     LEFT JOIN category c ON ((fc.category_id = c.category_id)))
+  GROUP BY a.actor_id, a.first_name, a.last_name;</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-27">
+        <createView fullDefinition="false" viewName="customer_list">SELECT cu.customer_id AS id,
+    (((cu.first_name)::text || ' '::text) || (cu.last_name)::text) AS name,
+    a.address,
+    a.postal_code AS "zip code",
+    a.phone,
+    city.city,
+    country.country,
+        CASE
+            WHEN cu.activebool THEN 'active'::text
+            ELSE ''::text
+        END AS notes,
+    cu.store_id AS sid
+   FROM (((customer cu
+     JOIN address a ON ((cu.address_id = a.address_id)))
+     JOIN city ON ((a.city_id = city.city_id)))
+     JOIN country ON ((city.country_id = country.country_id)));</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-28">
+        <createView fullDefinition="false" viewName="film_list">SELECT film.film_id AS fid,
+    film.title,
+    film.description,
+    category.name AS category,
+    film.rental_rate AS price,
+    film.length,
+    film.rating,
+    group_concat((((actor.first_name)::text || ' '::text) || (actor.last_name)::text)) AS actors
+   FROM ((((category
+     LEFT JOIN film_category ON ((category.category_id = film_category.category_id)))
+     LEFT JOIN film ON ((film_category.film_id = film.film_id)))
+     JOIN film_actor ON ((film.film_id = film_actor.film_id)))
+     JOIN actor ON ((film_actor.actor_id = actor.actor_id)))
+  GROUP BY film.film_id, film.title, film.description, category.name, film.rental_rate, film.length, film.rating;</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-29">
+        <createView fullDefinition="false" viewName="nicer_but_slower_film_list">SELECT film.film_id AS fid,
+    film.title,
+    film.description,
+    category.name AS category,
+    film.rental_rate AS price,
+    film.length,
+    film.rating,
+    group_concat((((upper("substring"((actor.first_name)::text, 1, 1)) || lower("substring"((actor.first_name)::text, 2))) || upper("substring"((actor.last_name)::text, 1, 1))) || lower("substring"((actor.last_name)::text, 2)))) AS actors
+   FROM ((((category
+     LEFT JOIN film_category ON ((category.category_id = film_category.category_id)))
+     LEFT JOIN film ON ((film_category.film_id = film.film_id)))
+     JOIN film_actor ON ((film.film_id = film_actor.film_id)))
+     JOIN actor ON ((film_actor.actor_id = actor.actor_id)))
+  GROUP BY film.film_id, film.title, film.description, category.name, film.rental_rate, film.length, film.rating;</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-30">
+        <createView fullDefinition="false" viewName="sales_by_film_category">SELECT c.name AS category,
+    sum(p.amount) AS total_sales
+   FROM (((((payment p
+     JOIN rental r ON ((p.rental_id = r.rental_id)))
+     JOIN inventory i ON ((r.inventory_id = i.inventory_id)))
+     JOIN film f ON ((i.film_id = f.film_id)))
+     JOIN film_category fc ON ((f.film_id = fc.film_id)))
+     JOIN category c ON ((fc.category_id = c.category_id)))
+  GROUP BY c.name
+  ORDER BY (sum(p.amount)) DESC;</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-31">
+        <createView fullDefinition="false" viewName="sales_by_store">SELECT (((c.city)::text || ','::text) || (cy.country)::text) AS store,
+    (((m.first_name)::text || ' '::text) || (m.last_name)::text) AS manager,
+    sum(p.amount) AS total_sales
+   FROM (((((((payment p
+     JOIN rental r ON ((p.rental_id = r.rental_id)))
+     JOIN inventory i ON ((r.inventory_id = i.inventory_id)))
+     JOIN store s ON ((i.store_id = s.store_id)))
+     JOIN address a ON ((s.address_id = a.address_id)))
+     JOIN city c ON ((a.city_id = c.city_id)))
+     JOIN country cy ON ((c.country_id = cy.country_id)))
+     JOIN staff m ON ((s.manager_staff_id = m.staff_id)))
+  GROUP BY cy.country, c.city, s.store_id, m.first_name, m.last_name
+  ORDER BY cy.country, c.city;</createView>
+    </changeSet>
+    <changeSet author="Jlopez (generated)" id="1670440043294-32">
+        <createView fullDefinition="false" viewName="staff_list">SELECT s.staff_id AS id,
+    (((s.first_name)::text || ' '::text) || (s.last_name)::text) AS name,
+    a.address,
+    a.postal_code AS "zip code",
+    a.phone,
+    city.city,
+    country.country,
+    s.store_id AS sid
+   FROM (((staff s
+     JOIN address a ON ((s.address_id = a.address_id)))
+     JOIN city ON ((a.city_id = city.city_id)))
+     JOIN country ON ((city.country_id = country.country_id)));</createView>
+    </changeSet>
+</databaseChangeLog>

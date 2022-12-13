@@ -1,0 +1,39 @@
+version: '3.5'
+
+services:
+
+  postgres:
+    image: postgres
+    container_name: postgresl
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "1234"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadminl
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "1234"
+    ports:
+      - "8200:80"
+    depends_on:
+      - postgres
+    volumes:
+      - ./db:/var/lib/pgadmin
+
+  liquibse:
+    image: liquibase/liquibase
+    container_name: liquibase
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    volumes:
+      - .:/liquibase/changelog/
+    command: bash -c "--defaults-file=/liquibase/changelog/liquibase.properties update && --classpath=liquibase/changelog:liquibase/classpath/my-driver.jar update"
